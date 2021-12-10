@@ -10,7 +10,7 @@ def read_data(path: str) -> list:
 
 def insertion_sort(list1):
     # Outer loop to traverse through 1 to len(list1)
-    with tqdm(list1, desc='Сортиртировка') as progressbar:
+    with tqdm(list1, desc='Сортиртировка',  colour="#FFFFFF") as progressbar:
         for i in range(1, len(list1)):
             j = i
             while j >= 0 and int(list1[j - 1]['age']) > int(list1[j]['age']):

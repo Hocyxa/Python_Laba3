@@ -82,7 +82,7 @@ print("Количество невалидных адресов:", counter_unval
 output_file.close()
 data_to_sort = MyInsertionSort.read_data(write_valid_data_to)
 sort_data = MyInsertionSort.insertion_sort(data_to_sort)
-with open('75_sorted.txt', mode='w') as write_to_file:
+with open('C:/Users/matro/PycharmProjects/Python_Laba3/75_sorted.txt', mode='w') as write_to_file:
     json.dump(sort_data, write_to_file, ensure_ascii=False, indent=1)
-print_data = MyInsertionSort.read_data('75_sorted.txt')
+print_data = MyInsertionSort.read_data('C:/Users/matro/PycharmProjects/Python_Laba3/75_sorted.txt')
 print(print_data)
