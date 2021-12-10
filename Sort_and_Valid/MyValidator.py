@@ -120,7 +120,7 @@ class validator:
         bool:
             результат проверки (всё правильно - True, найдены несовбодения - False)
         """
-        return re.match(r"[0-9]{1,3}", str(self.__age)) is not None and 0 <= int(self.__age) <= 108
+        return re.match(r"[0-9]{1,3}", str(self.__age)) is not None and 22 <= int(self.__age) <= 108
 
     def check_political_views(self) -> bool:
         """

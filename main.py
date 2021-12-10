@@ -2,6 +2,7 @@ import json
 from tqdm import tqdm
 import argparse
 from Sort_and_Valid import MyValidator
+from Sort_and_Valid import MyInsertionSort
 
 
 class ReadFile:
@@ -48,7 +49,7 @@ output_file = open(args.file_output, "w", encoding="ascii")
 counter_valid = 0
 counter_unvalid_of_records = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 data_to_save = []
-with tqdm(input_file.data, desc='Процесс проверки записей(не выключайте проргамму)') as progressbar:
+with tqdm(input_file.data, desc='Процесс проверки записей(не выключайте проргамму)',  colour="#FFFFFF") as progressbar:
     for record in input_file.data:
         check = MyValidator.validator(record['email'], record['height'], record['snils'],
                                       record['passport_number'], record['university'], record['age'],
@@ -79,3 +80,9 @@ print("Количество невалидных политических взг
 print("Количество невалидных вероисповеданий:", counter_unvalid_of_records[7])
 print("Количество невалидных адресов:", counter_unvalid_of_records[8])
 output_file.close()
+data_to_sort = MyInsertionSort.read_data(write_valid_data_to)
+sort_data = MyInsertionSort.insertion_sort(data_to_sort)
+with open('75_sorted.txt', mode='w') as write_to_file:
+    json.dump(sort_data, write_to_file, ensure_ascii=False, indent=1)
+print_data = MyInsertionSort.read_data('75_sorted.txt')
+print(print_data)

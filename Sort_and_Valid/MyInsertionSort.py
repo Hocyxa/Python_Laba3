@@ -21,10 +21,11 @@ def insertion_sort(list1):
     return list1
 
 
-data = read_data("C:/Users/matro/PycharmProjects/Python_Laba3/75_result_to_sort.txt")
+"""data = read_data("C:/Users/matro/PycharmProjects/Python_Laba3/75_result_to_sort.txt")
 sort_data = insertion_sort(data)
 with open('75_sorted.txt', mode='w') as write_to_file:
     json.dump(sort_data, write_to_file, ensure_ascii=False, indent=1)
 with open('75_sorted.txt', 'r') as file:
     print_data = json.load(file)
 print(print_data)
+"""
